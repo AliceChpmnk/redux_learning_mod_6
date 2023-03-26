@@ -5,13 +5,13 @@ import css from "./StatusFilter.module.css";
 import { useSelector, useDispatch } from "react-redux";
 // Імпортуємо об'єкт значень фільтра
 import { statusFilters } from "../../redux/constants";
-import { getStatusFilter } from "../../redux/selectors";
+import { selectStatusFilter } from "../../redux/selectors";
 // Імпортуємо генератор екшену
-import { setStatusFilter } from "../../redux/actions";
+import { setStatusFilter } from "redux/filtersSlice";
 
 export const StatusFilter = () => {
   // Отримуємо значення фільтра із стану Redux
-  const filter = useSelector(getStatusFilter);
+  const filter = useSelector(selectStatusFilter);
   // Отримуємо посилання на функцію відправки екшенів
   const dispatch = useDispatch();
   // Викликаємо генератор екшену та передаємо значення фільтра
